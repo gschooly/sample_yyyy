@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>네모</title>
+  <style>
+    #nemo {
+      text-align: center;
+      line-height: 500px;
+      font-size: 15px;
+      margin: auto;
+      width: 500px;
+      height: 500px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id='nemo'>네모</div>
+
+  <script>
+    var box = document.getElementById('nemo');
+
+    window.addEventListener('keydown', function (event) {
+      console.log(event.key);
+      console.log(event.keyCode);
+      var keyCode = event.keyCode;
+      var numx = 0;
+      var numy = 0;
+      if (keyCode == 49) {
+        box.style.background = 'red';
+      } else if (keyCode == 50) {
+        box.style.background = 'orange';
+      } else if (keyCode == 51) {
+        box.style.background = 'yellow';
+      } else if (keyCode == 52) {
+        box.style.background = 'green';
+      } else if (keyCode == 53) {
+        box.style.background = 'blue';
+      } else if (keyCode == 54) {
+        box.style.background = 'navy';
+      } else if (keyCode == 55) {
+        box.style.background = 'purple';
+      } else if (keyCode == 27) {
+        box.style.background = 'white';
+      }
+    })
+
+  </script>
+</body>
+
+</html>

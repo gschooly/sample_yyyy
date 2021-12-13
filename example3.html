@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    img {
+      width: 100px;
+      margin-top: 630px;
+      margin-left: 600px;
+    }
+
+    .value {
+      margin-top: -5rem;
+      font-size: 7rem;
+      font-weight: 100;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <img class='ilbuni' src='./한화.png' alt='한화이글스'>
+  <div class='value'>requestAnimationFrame</div>
+
+  <script>
+    const ilbuni = document.querySelector('.ilbuni');
+    const value = document.querySelector('.value');
+    let yPos = 0;
+
+    function render() {
+      value.innerHTML = yPos;
+      ilbuni.style.transform = `translateY(${- yPos}px)`;
+      yPos += 10;
+
+      requestAnimationFrame(render);
+    }
+
+    render();
+
+  </script>
+</body>
+
+</html>

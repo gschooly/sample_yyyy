@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    .container {
+      width: 640px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .album {
+      height: 400px;
+      width: 640px;
+      overflow: hidden;
+    }
+
+    .images {
+      position: relative;
+      display: flex;
+      height: 400px;
+      width: 640px;
+    }
+
+    img {
+      /* width: 640px;
+      height: 400px; */
+      object-fit: cover;
+    }
+
+    button,
+    button:active,
+    button:focus {
+      width: 100px;
+      height: 30px;
+      border: none;
+      color: white;
+      background-color: teal;
+      outline: none;
+    }
+
+    button:hover {
+      background-color: turquoise;
+    }
+
+    button:disabled {
+      background-color: gray;
+    }
+
+    .prev {
+      float: left;
+    }
+
+    .next {
+      float: right;
+    }
+  </style>
+</head>
+
+<body>
+  <div class='container'>
+    <h1>버튼 누르면 넘어가는 이미지 슬라이드</h1>
+    <div class='album'>
+      <div class='images'>
+        <img src='./아우내.jpeg'>
+        <img src='./엔씨.jpeg'>
+        <img src='./와이.jpeg'>
+        <img src='./한화.png'>
+      </div>
+    </div>
+    <button class='prev'>Prev</button>
+    <button class='next'>Next</button>
+  </div>
+
+  <script>
+    let curPos = 0;
+    let postion = 0;
+    const IMAGE_WIDTH = 640;
+    const prevBtn = document.querySelector(".prev")
+    const nextBtn = document.querySelector(".next")
+    const images = document.querySelector(".images")
+
+    function prev() {
+      if (curPos > 0) {
+        nextBtn.removeAttribute("disabled")
+        postion += IMAGE_WIDTH;
+        images.style.transform = `translateX(${postion}px)`;
+        curPos = curPos - 1;
+      }
+      if (curPos == 0) {
+        prevBtn.setAttribute('disabled', 'true')
+      }
+    }
+    function next() {
+      if (curPos < 3) {
+        prevBtn.removeAttribute("disabled")
+        postion -= IMAGE_WIDTH;
+        images.style.transform = `translateX(${postion}px)`;
+        curPos = curPos + 1;
+      }
+      if (curPos == 3) {
+        nextBtn.setAttribute('disabled', 'true')
+      }
+    }
+
+    function init() {
+      prevBtn.setAttribute('disabled', 'true')
+      prevBtn.addEventListener("click", prev)
+      nextBtn.addEventListener("click", next)
+    }
+    init();
+  </script>
+</body>
+
+</html>

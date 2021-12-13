@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>?????</title>
+
+  <style>
+    body {
+      margin-top: 100px;
+    }
+
+    #imgbox {
+      width: 600px;
+      height: 450px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #momo {
+      opacity: 0;
+      transition: 0.1s;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- <div class='container'>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque autem eius alias fugit, illo temporibus eveniet
+      cupiditate est eos assumenda ex aliquid eaque rerum tempora odio quas quod repellendus quaerat.</p>
+    <button id='submit'>Click</button>
+  </div> -->
+
+  <div id='imgbox'>
+    <img id='momo' src='./모모.jpeg' width='300px'>
+  </div>
+
+  <script>
+    // var btn = document.getElementById('submit'),
+    //   container = document.querySelector('.container');
+
+    // btn.addEventListener('click', function () {
+    //   btn.style.color = 'red';
+    //   console.log('click');
+    // });
+    // container.addEventListener('mouseenter', function () {
+    //   console.log('마우스 인');
+    // })
+    // container.addEventListener('mouseleave', function () {
+    //   console.log('마우스 아웃');
+    // })
+
+
+    var imgBox = document.getElementById('imgbox');
+    var img = document.getElementById('momo');
+
+    imgBox.addEventListener('mouseenter', function () {
+      img.style.opacity = '1'
+      console.log('모모 등장')
+    });
+    imgBox.addEventListener('mouseleave', function () {
+      img.style.opacity = '0'
+      console.log('모모 퇴장')
+    });
+  </script>
+</body>
+
+</html>
